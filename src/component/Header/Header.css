@@ -1,0 +1,28 @@
+.header{
+
+    background-color: #082075;
+    display: flex;
+    justify-content: space-between;
+}
+.menuButton{
+    margin-left: 11%;
+
+}
+.menuButton a{
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    display: inline-block;
+    height: 100%;
+    margin-right: 5px;
+
+
+
+}
+
+.menuButton a:hover{
+    background-color: #e5ebff;
+    color: blue;
+    transition: 0.5s;
+    box-shadow: 1px 1px 4px 2px white;
+}

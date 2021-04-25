@@ -1,0 +1,19 @@
+.movieDetails{
+    display: flex;
+
+    margin-bottom: 10px;
+
+}
+.viewFilm{
+    width: 400px;
+    height: 600px;
+text-align: center;
+}
+.filmm {
+    padding: 10px;
+    height: 95%;
+    object-fit: contain;
+}
+.qwe{
+    width: 100%;
+}

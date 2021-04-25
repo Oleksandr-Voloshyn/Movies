@@ -1,0 +1,39 @@
+.padding {
+    text-align: center;
+    /*margin: 40px 0;*/
+    display: inline-block;
+    height: 50px;
+    margin-top: 70px;
+    padding: 0 25px;
+    border-radius: 35px;
+    background-color: #e5ebff;
+    margin-bottom: 15px;
+
+}
+.page{
+    display: block;
+    padding: 0 25px;
+    float: left;
+    transition: 400ms ease;
+    color: green;
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    line-height: 50px;
+}
+.current-number{
+    background-color: yellow;
+}
+.page:hover{
+    background-color: #86c023;
+    color: #fff;
+}
+
+
+
+
+.next, .back{
+    /*background-color: transparent;*/
+    color: green;
+    height: 100%;
+}
+
