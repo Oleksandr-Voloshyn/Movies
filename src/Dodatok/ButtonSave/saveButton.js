@@ -2,42 +2,54 @@ import React, {useEffect, useState} from 'react';
 import {connect} from "react-redux";
 import './saveButton.css'
 
-import {removeSaveMovie, setSaveMovies} from "../../../redux/saveMovies-reducer";
+import {removeSaveMovie, setSaveMovies} from "../../redux/saveMovies-reducer";
 
-import save from '../../../image/save.svg';
-import remove from '../../../image/remove.svg';
+import save from '../../image/save.png';
+import remov from "../../image/remov.png"
 
 
 const SaveButton = (props) => {
+
   const [like, setLike] = useState(false);
 
+const sww = (boolean) => {
+  setLike(boolean)
+}
   useEffect(() => {
+    console.log(props.saveMovies)
     if (props.saveMovies !== []) {
       for (let i of props.saveMovies) {
         if (i.id === props.movie.id) {
-          setLike(true)
+          sww(true)
+          console.log(like)
           break;
-        } else setLike(false)
+        } else sww(false)
+        console.log(like)
       }
     }
   }, [props.movies])
 
-  useEffect(() => {
+  useEffect(() => {  
     for (let i of props.saveMovies) {
       if (i.id === props.film.id) {
+       
         setLike(true)
         break;
-      }
+      } else setLike(false)
     }
   }, [props.film])
 
   let addToLike = () => {
     setLike(true);
     props.setSaveMovies(props.movie)
+    const aaa =JSON.stringify(props.movie)
+    localStorage.setItem(props.movie.id, aaa);
+
   }
   let removeLikeMovie = () => {
     setLike(false)
     props.removeSaveMovie(props.movie)
+    localStorage.removeItem(props.movie.id);
   }
 
   let displayFav = () => {
@@ -45,7 +57,7 @@ const SaveButton = (props) => {
       return (
         <img
           className='save'
-          src={remove}
+          src={remov}
           alt=''
           onClick={() => addToLike()}/>
       )

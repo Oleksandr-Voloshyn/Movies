@@ -13,6 +13,8 @@ const saveMoviesReducer = (state = initialState, action) => {
         ...state,
         saveMovies: [...state.saveMovies.filter(i => i.id !== action.payload.id), action.payload]
       }
+
+    
     case REMOVE_SAVE_MOVIE:
       return {
         ...state,
@@ -24,6 +26,19 @@ const saveMoviesReducer = (state = initialState, action) => {
 }
 
 export const setSaveMovies = (payload) => ({type: SET_SAVE_MOVIES, payload});
-export const removeSaveMovie = (movie) => ({type: REMOVE_SAVE_MOVIE, movie})
+export const removeSaveMovie = (movie) => ({type: REMOVE_SAVE_MOVIE, movie});
+
+
+export const getMovieLocalStorage = () => {
+  return async (dispatch) => {
+    for(let key in localStorage) {
+      if (!localStorage.hasOwnProperty(key)) {
+        continue;
+      }
+      const local = localStorage.getItem(key)
+       dispatch(setSaveMovies(JSON.parse(local)))
+    }
+  }
+}
 
 export default saveMoviesReducer;

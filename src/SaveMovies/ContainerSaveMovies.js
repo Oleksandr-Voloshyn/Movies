@@ -5,16 +5,25 @@ import './SaveMovies.css'
 
 import SaveMovies from "./SaveMovies";
 
-import {getMovieIdThunk, getRecommendationsMoviesThunk} from "../../redux/movieId-reducer";
-import {removeSaveMovie} from "../../redux/saveMovies-reducer";
+import {getMovieIdThunk, getRecommendationsMoviesThunk} from "../redux/movieId-reducer";
+import {getMovieLocalStorage, removeSaveMovie} from "../redux/saveMovies-reducer";
+import { withRouter } from 'react-router';
 
 class ContainerSaveMovies extends Component {
+  componentDidMount(){
+    this.props.getMovieLocalStorage()
+  }
+  
   openFilm = (id) => {
     this.props.getMovieIdThunk(id);
     this.props.getRecommendationsMoviesThunk(id);
-    this.props.history.push(`/movie`)
+    this.props.history.push(`/movie/${id}`)
   }
 
+  removeSaveMovie = (i) => {
+    this.props.removeSaveMovie(i)
+    localStorage.removeItem(i.id);
+  }
 
   render() {
     return (
@@ -23,7 +32,7 @@ class ContainerSaveMovies extends Component {
           <SaveMovies saveMovies={this.props.saveMovies}
                       allGenres={this.props.allGenres}
                       openFilm={this.openFilm}
-                      removeSaveMovie={this.props.removeSaveMovie}/>
+                      removeSaveMovie={this.removeSaveMovie}/>
         </div>
       </div>
     );
@@ -38,5 +47,5 @@ let mapStateToProps = (state) => {
   }
 }
 export default connect(mapStateToProps, {
-  getMovieIdThunk, removeSaveMovie, getRecommendationsMoviesThunk})
-(ContainerSaveMovies);
+  getMovieIdThunk, removeSaveMovie, getRecommendationsMoviesThunk, getMovieLocalStorage})
+(withRouter(ContainerSaveMovies));

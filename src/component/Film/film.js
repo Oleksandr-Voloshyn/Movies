@@ -1,32 +1,36 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './film.css'
-import Genres from "../Dodatok/Genres/Genres";
-import SaveButton from "../Dodatok/ButtonSave/saveButton";
+import SaveButton from "../../Dodatok/ButtonSave/saveButton";
+
 
 
 const Film = (props) => {
+  const {movie} = props
+
   return (
     <div className='movieDetails'>
+
       <div className='viewFilm'>
         <img
           className={'filmm'}
           alt=''
-          src={`https://image.tmdb.org/t/p/original${props.movie.poster_path}`}
+          src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
         />
       </div>
 
       <div className='qwe'>
-        {/*<Genres movie={props.movie} allGenres={props.allGenres} aaa={'sss'}/>*/}
-        <h2 className='title'>{props.movie.original_title}</h2>
-        <p><b>Release date:</b> {props.movie.release_date}</p>
-        <p><b>Vote average:</b> {props.movie.vote_average}</p>
-        <p><b>Budget:</b> {props.movie.budget}$</p>
-        <p><b>Overview:</b> {props.movie.overview}</p>
+        <h2 className='title'>{movie.original_title}</h2>
+        <p><b>Genres:</b> {movie.genres && movie.genres.map(i => <span key={i.id}>{i.name} </span>)}
+        </p>
+        <p><b>Release date:</b> {movie.release_date}</p>
+        <p><b>Vote average:</b> {movie.vote_average}</p>
+        <p><b>Budget:</b> {movie.budget}$</p>
+        <p><b>Overview:</b> {movie.overview}</p>
       </div>
-      <SaveButton movie={props.movie} showButton={true}/>
+      <SaveButton movie={movie} showButton={true}/>
     </div>
   );
-}
+}                  
 
 
 export default Film;

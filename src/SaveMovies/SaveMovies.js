@@ -1,6 +1,8 @@
 import React from 'react';
 import './SaveMovies.css'
+import clouse from '../image/clouse.png'
 import Genres from "../Dodatok/Genres/Genres";
+
 
 const SaveMovies = (props) => {
   return (
@@ -17,9 +19,11 @@ const SaveMovies = (props) => {
                   onClick={() => props.openFilm(i.id)}/>
                 <div className='text'>
                   <h2 className='nameMovie'>{i.original_title}</h2>
-                  <Genres movie={i} allGenres={props.allGenres}/>
-                  <button className='removeMovie' onClick={() => props.removeSaveMovie(i)}>sss</button>
-                </div>
+                  <img 
+                  className='removeMovie' 
+                  src={clouse}
+                  alt=''
+                  onClick={() => props.removeSaveMovie(i)}/>               </div>
               </div>
             </div>
             <img

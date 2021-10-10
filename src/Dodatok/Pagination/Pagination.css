@@ -6,7 +6,7 @@
     margin-top: 70px;
     padding: 0 25px;
     border-radius: 35px;
-    background-color: #e5ebff;
+    background-color: #bdbdbd;
     margin-bottom: 15px;
 
 }
@@ -15,16 +15,16 @@
     padding: 0 25px;
     float: left;
     transition: 400ms ease;
-    color: green;
+    color: white;
     font-size: 15px;
     letter-spacing: 0.1em;
     line-height: 50px;
 }
 .current-number{
-    background-color: yellow;
+    background-color: black;
 }
 .page:hover{
-    background-color: #86c023;
+    background-color: rgb(102, 102, 102);
     color: #fff;
 }
 
@@ -33,7 +33,7 @@
 
 .next, .back{
     /*background-color: transparent;*/
-    color: green;
+    color: black;
     height: 100%;
 }
 

@@ -43,7 +43,6 @@ export const clearMovie = () => ({type: CLEAR_MOVIE});
 export const getMovieIdThunk = (id) => {
   return async dispatch => {
     let response = await movieId(id)
-    console.log(response)
     dispatch (setMovie(response.data))
   }
 }
@@ -53,7 +52,6 @@ export const getRecommendationsMoviesThunk = (id) => {
     let response = await recommendationsMovies(id)
     dispatch (setRecommendationsMovies(response.data.results))
   }
-
 }
 
 export default moviesIdReduser;

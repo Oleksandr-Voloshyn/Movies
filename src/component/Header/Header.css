@@ -6,6 +6,7 @@
 }
 .menuButton{
     margin-left: 11%;
+    
 
 }
 .menuButton a{
@@ -13,16 +14,16 @@
     font-size: 30px;
     text-decoration: none;
     display: inline-block;
-    height: 100%;
+    height: 90%;
     margin-right: 5px;
-
-
-
 }
+/* .button{
+    box-shadow: 4px 1px 5px black;
+} */
 
 .menuButton a:hover{
     background-color: #e5ebff;
     color: blue;
     transition: 0.5s;
-    box-shadow: 1px 1px 4px 2px white;
+    box-shadow: 1px 1px 4px 2px rgb(255, 255, 255);
 }

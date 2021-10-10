@@ -1,21 +1,27 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
+import { withRouter } from 'react-router';
+
 import Film from "./film";
 import Recommendations from "./Recommendations";
 
-import {getMovieIdThunk, getRecommendationsMoviesThunk} from "../../redux/movieId-reducer";
-
 import './Containerfilm.css';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
+import {getMovieIdThunk, getRecommendationsMoviesThunk} from "../../redux/movieId-reducer";
+import {getMovieLocalStorage} from "../../redux/saveMovies-reducer";
 
 
 
 class ContainerFilm extends Component {
+  componentDidMount(){
+    this.props.getMovieIdThunk(this.props.itemId);
+    this.props.getRecommendationsMoviesThunk(this.props.itemId);
+    this.props.getMovieLocalStorage();
+  }
   openFilm = (id) => {
     this.props.getMovieIdThunk(id);
     this.props.getRecommendationsMoviesThunk(id);
-    this.props.history.push(`/movie`)
+    this.props.history.push(`/movie/${id}`)
   }
 
   render() {
@@ -40,5 +46,6 @@ let mapDispatchToProps = (state) => {
 
 export default connect(mapDispatchToProps, {
   getMovieIdThunk,
-  getRecommendationsMoviesThunk
-})(ContainerFilm);
+  getRecommendationsMoviesThunk, getMovieLocalStorage
+}) (withRouter(ContainerFilm));
+ 

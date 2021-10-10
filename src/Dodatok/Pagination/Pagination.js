@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 import {connect} from "react-redux";
+import { withRouter } from "react-router";
 import './Pagination.css'
 
 
 const Pagination = (props) => {
-
   let pages = [];
   let portionSize = 10;
   for (let i = 1; i <= props.totalResults; i++){
@@ -26,11 +26,10 @@ const Pagination = (props) => {
       {pages
         .filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber)
         .map((p) => {
-            return <span
+              return <span
               className={props.currentPage === p ? "current-number page" : "page"}
               key={p}
-              onClick={(e) => {
-                props.onPageChange(p)
+              onClick={() => {props.onPageChange(p)
               }}> {p}
             </span>
           }
@@ -49,4 +48,4 @@ let mapStateToProps = (state) => {
 
   }
 }
-export default connect(mapStateToProps, null) (Pagination);
+export default connect(mapStateToProps, null) (withRouter(Pagination));

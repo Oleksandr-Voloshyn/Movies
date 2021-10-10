@@ -1,13 +1,10 @@
 import React from 'react';
-import '../../PopularMovies/CardMovie.css'
+import '../../component/PopularMovies/CardMovie.css'
 
 
 const Genres = (props) => {
-
   let arr = []
   let arrGenres = (movie) => {
-
-    arr = []
     for (let b in movie.genre_ids) {
       for (let a of props.allGenres) {
         if (movie.genre_ids[b] === a.id) {
@@ -21,9 +18,9 @@ const Genres = (props) => {
     <div className='genres'>
       {arrGenres(props.movie)}
       {arr.map(i => {
-        return <span className='genre'>
+        return <span className='genre'
+        key={i.id}>
                     {i}
-
                   </span>
       })}
 

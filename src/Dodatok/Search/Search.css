@@ -6,17 +6,17 @@
 }
 
 .input{
-  font-size: 30px;
-  /*border: 2px solid white;*/
-  border-radius: 10px;
+  font-size: 25px;
+  border-radius: 10px 0 0 10px;
 
 
 }
-.button{
+.buttonSearch{
   position: absolute;
   right: 0;
-  width: 40px;
-  margin-right: 10px;
+  width: 70px;
+  height: 100%;
+  background-color: rgb(240, 236, 236);
 
 
 
