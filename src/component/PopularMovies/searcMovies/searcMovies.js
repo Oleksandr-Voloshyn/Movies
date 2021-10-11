@@ -10,6 +10,7 @@ useEffect(() => {
     return () => {
         props.clearSearchMovies()
         
+        
     }
 }, [props.match.path])
 

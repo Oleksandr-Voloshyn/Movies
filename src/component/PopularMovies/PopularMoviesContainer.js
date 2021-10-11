@@ -35,9 +35,7 @@ state = {
   }
 
   componentDidUpdate(prevState, prevProps){
-console.log(prevProps)
     if (this.props.movies.length === 0) {
-      console.log('sss')
       this.props.getPopularMovies(this.state.current);
     }
     if(this.props.match.path === '/' && this.state.current !== prevProps.current){
@@ -47,14 +45,12 @@ console.log(prevProps)
   }
 
   componentWillUnmount(){
-    console.log('unmount')
     this.setState({current: 1})
   }
 
   onPageChange = (page) => {
     this.setState({current: page})
-    this.props.getPopularMovies(page);
-   // this.props.history.push(`/${page}`)  
+    this.props.getPopularMovies(page);  
   };
 
   onPageSearchMovies = (page) => {
@@ -65,7 +61,6 @@ console.log(prevProps)
   };
 
   openFilm = (id) => {
-   
     this.props.getMovieIdThunk(id);
     this.props.getRecommendationsMoviesThunk(id);
     this.props.history.push(`/movie/${id}`)

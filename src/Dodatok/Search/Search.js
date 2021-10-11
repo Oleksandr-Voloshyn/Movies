@@ -23,7 +23,6 @@ const Search = (props) => {
                placeholder="Search"
         />
         <button className='buttonSearch' onClick={search}> Search </button>
-          {/* <img src={lupa} alt='' className='button' onClick={search}/> */}
 
     </div>
   );

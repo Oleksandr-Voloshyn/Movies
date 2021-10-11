@@ -21,7 +21,7 @@ class Recommendations extends Component {
     return (
 
       <div className='recomendationScoll'>
-        <h1>Схожі фільми</h1>
+        <h1>Similar movies</h1>
 
           <Slider {...settings}>
             {this.props.recommendations.map(i => {
