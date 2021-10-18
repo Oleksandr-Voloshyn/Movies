@@ -1,0 +1,14 @@
+.movie-details{
+    display: flex;
+    margin-bottom: 10px;
+}
+.view-film{
+    width: 400px;
+    height: 600px;
+    text-align: center;
+}
+.movie-image {
+    padding: 10px;
+    height: 95%;
+    object-fit: contain;
+}

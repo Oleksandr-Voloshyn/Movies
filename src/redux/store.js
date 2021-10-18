@@ -1,8 +1,9 @@
 import {applyMiddleware, combineReducers, createStore} from "redux";
-import popularMoviesReduser from "./popularMovies-reducer";
 import thunk from "redux-thunk";
-import moviesIdReduser from "./movieId-reducer";
-import saveMoviesReducer from "./saveMovies-reducer";
+
+import popularMoviesReduser from "./popular-movies-reducer";
+import moviesIdReduser from "./movie-id-reducer";
+import saveMoviesReducer from "./save-movies-reducer";
 
 
 

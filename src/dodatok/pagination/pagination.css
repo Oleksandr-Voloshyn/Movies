@@ -1,0 +1,38 @@
+.look-pagination {
+    text-align: center;
+    display: inline-block;
+    height: 50px;
+    margin-top: 70px;
+    padding: 0 25px;
+    border-radius: 35px;
+    background-color: #bdbdbd;
+    margin-bottom: 15px;
+
+}
+.page{
+    display: block;
+    padding: 0 25px;
+    float: left;
+    transition: 400ms ease;
+    color: white;
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    line-height: 50px;
+}
+.current-number{
+    background-color: black;
+}
+.page:hover{
+    background-color: rgb(102, 102, 102);
+    color: #fff;
+}
+
+
+
+
+.next, .back{
+    /*background-color: transparent;*/
+    color: black;
+    height: 100%;
+}
+

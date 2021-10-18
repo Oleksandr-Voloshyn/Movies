@@ -1,0 +1,65 @@
+
+.save-page{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 14%;
+}
+.image-block{
+    display: flex;
+    width: 300px;
+}
+
+.movie-card{
+    position: relative;
+    width: 40%;
+    height: 100%;
+    margin: 20px 10px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.4s;
+
+}
+
+/*чорний фон*/
+.info-section{
+    background: linear-gradient(to right, #0d0d0c 50%, transparent 100%);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-blend-mode: multiply;
+    z-index: 2;
+    border-radius: 10px;
+}
+
+/*Бокове зображення*/
+.blur-back{
+    width: 70%;
+    background-position: 80% 80% !important;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    height: 100%;
+    background-size: cover;
+    border-radius: 11px;
+}
+
+.text{
+    color: white;
+    padding-left: 10px;
+
+}
+.name-movie{
+    width: 250px;
+}
+.remove-movie{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 7%;
+}
+.image{
+  width: 50%;
+    cursor: pointer;
+}
+
