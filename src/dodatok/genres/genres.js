@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../container/container-popular-movies/container-popular-movies.css'
+import './genres.css';
 
 
 const Genres = (props) => {

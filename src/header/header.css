@@ -1,25 +1,27 @@
 .header{
-    background-color: #082075;
+    background-color:rgb(34, 34, 34);
     display: flex;
     justify-content: space-between;
 }
+
 .menu-button{
     margin-left: 11%;
-    
-
 }
+
 .menu-button a{
     color: white;
-    font-size: 30px;
+    font-size: 20px;
     text-decoration: none;
     display: inline-block;
-    height: 90%;
-    margin-right: 5px;
+    margin-top: 3px;
+    padding: 2px;
+    margin-right: 20px;
+    box-shadow: 3px 4px 2px black;    
 }
 
 .menu-button a:hover{
     background-color: #e5ebff;
-    color: blue;
+    color: black;
     transition: 0.5s;
     box-shadow: 1px 1px 4px 2px rgb(255, 255, 255);
 }

@@ -1,72 +1,64 @@
 
 
-.film {
-    object-fit: cover;
-    border-radius: 5px 5px 0 0;
-    width: 100%;
-
-}
-
 .all-film {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     max-width: 1200px;
-    min-width: 200px;
-
-
-    
-
+    min-width: 100px;   
 }
-.font-film{
-    margin: 15px;
+.film{
     width: 200px;
-    height: 100%;
-    background-color: #999898;
-    border-radius: 10px;
-    position: relative;
-
-
+    margin: 10px;
 }
-.button-save{
-    position: absolute;
-    bottom: 9%;
-    right: 0;
-}
-.genres{
-    padding-top: 5px;
-    display: flex;
-    flex-wrap: wrap;
+
+.image-film {
+    object-fit: cover;
     width: 100%;
-    height: 50px;
-    overflow:hidden;
-    text-overflow: ellipsis;
-    white-space: pre;
+    cursor: pointer;
 }
-.genre{
-    padding: 0 5px 5px;
-    height: 25%;
-    border-radius: 4px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    text-align: center;
-    font-size: 15px;
-    border: 1px solid rgb(0, 0, 0);
-    background-color: #f1f1f1;
 
+.font-film{
+    position: relative;
+    background: -webkit-linear-gradient(rgb(187, 186, 186), rgb(95, 92, 92));
 }
+.fon-button-save{
+    width: 30px;
+    height: 30px;
+    background-color: gray;
+    z-index: 1;
+    position: absolute;
+    top: -18px;
+    right: 0;
+    border-radius: 15px;
+    margin-right: 2px;
+}
+.all-genres{
+    padding-left: 4px;
+    padding-bottom: 4px;
+}
+
+.button-save{ 
+    display: inline-block;
+    transform: translate(5px, -18%);
+    z-index: 2;
+}
+
+/*  */
 
 .title{
     text-align: center;
-    font-size: 19px;
+    font-size: 17px;
+    
     font-weight: bolder;
-    height: 50px;
-    width: 85%;
+    /* height: 50px; */
+    width: 88%;
+    white-space: nowrap;
     box-sizing: border-box;
     margin-bottom: -4px;
     margin-top: -4px;
     overflow:hidden;
     text-overflow: ellipsis;
-
+    font-family: "Times New Roman", Times, serif;
 }
