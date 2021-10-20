@@ -9,7 +9,7 @@ const CardMovie = ({movies, openFilm, allGenres}) => {
     <div>
       <div className='all-film'>
         {movies.map(s => {
-          return <div className='film' key={s.id}>
+          return <div className='card-film' key={s.id}>
 
             {s.backdrop_path == null
               ? <img

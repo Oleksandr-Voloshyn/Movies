@@ -11,8 +11,6 @@ const SearcMovies = (props) => {
 useEffect(() => {
     return () => {
         props.clearSearchMovies()
-        
-        
     }
 }, [props.match.path])
 

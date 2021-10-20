@@ -1,4 +1,4 @@
-.search{
+.search-placement {
   display: flex;
   justify-content: flex-end;
   position: relative;
@@ -11,7 +11,7 @@
 
 
 }
-.buttonSearch{
+.button-search{
   position: absolute;
   right: 0;
   width: 70px;
