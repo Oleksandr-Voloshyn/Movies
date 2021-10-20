@@ -14,7 +14,7 @@ const Search = (props) => {
   }
 
   return (
-    <div className='search'>
+    <div className='search-placement'>
 
         <input type="text"
                className='input'
@@ -22,7 +22,7 @@ const Search = (props) => {
                onChange={(e) => setValue(e.target.value)}
                placeholder="Search"
         />
-        <button className='buttonSearch' onClick={search}> Search </button>
+        <button className='button-search' onClick={search}> Search </button>
 
     </div>
   );

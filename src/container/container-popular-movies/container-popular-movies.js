@@ -54,7 +54,6 @@ state = {
 
   onPageSearchMovies = (page) => {
     this.setState({current: page})
-    this.props.setCurrentPage(this.state.current);
     this.props.getSearchMovies(this.props.value, page) 
     this.props.history.push(`/search`)
   };
@@ -113,10 +112,10 @@ let mapStateToProps = (state) => {
     allGenres: state.popularMovies.allGenres,
     saveMovies: state.likeMovies.saveMovies,
     moviesSearch: state.popularMovies.moviesSearch,
+    value:state.popularMovies.value
   }
 }
 export default connect(mapStateToProps, {
   getPopularMovies, getGenresMovies, getSearchMovies, getMovieIdThunk, getRecommendationsMoviesThunk,
-  clearMovie, setSaveMovies, getMovieLocalStorage, clearSearchMovies,
-   
+  clearMovie, setSaveMovies, getMovieLocalStorage, clearSearchMovies   
 })(withRouter (PopularMoviesContainer));

@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 
-import './saveMovies.css'
+import './save-movies.css'
 
-import SaveMovies from "./saveMovies";
+import SaveMovies from "./save-movies";
 
 import {getMovieIdThunk, getRecommendationsMoviesThunk} from "../../redux/movie-id-reducer";
 import {getMovieLocalStorage, removeSaveMovie} from "../../redux/save-movies-reducer";
@@ -31,13 +31,11 @@ class ContainerSaveMovies extends Component {
     const {openFilm,removeSaveMovie} = this
     return (
       <div>
-        <div className='pageSaveMovies'>
           <SaveMovies saveMovies={saveMovies}
                       allGenres={allGenres}
                       openFilm={openFilm}
                       removeSaveMovie={removeSaveMovie}
           />
-        </div>
       </div>
     );
   }

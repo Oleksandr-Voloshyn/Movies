@@ -16,7 +16,7 @@ class Recommendations extends Component {
       dots: true,
       infinite: true,
       speed: 900,
-      slidesToShow: 3,
+      slidesToShow: 4,
       slidesToScroll: 3
     }
     return (
@@ -30,10 +30,10 @@ class Recommendations extends Component {
               return <div key={i.id}>
                 {i.poster_path == null
                   ? <img
-                    className='recommendatioms'
+                    className='recommendatioms-image'
                     src={`https://i.stack.imgur.com/y9DpT.jpg`}/>
                   : <img
-                    className='recommendatioms'
+                    className='recommendatioms-image'
                     src={`https://image.tmdb.org/t/p/original${i.poster_path}`}
                     onClick={() => openFilm(i.id)}/>
                 }

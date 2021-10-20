@@ -1,15 +1,15 @@
 .look-pagination {
-    text-align: center;
     display: inline-block;
     height: 50px;
-    margin-top: 70px;
     padding: 0 25px;
     border-radius: 35px;
-    background-color: #bdbdbd;
+    background-color: #838383;
+    margin-top: 15px;
     margin-bottom: 15px;
-
+    transform: translate(20%, 0px);
 }
-.page{
+
+.page {
     display: block;
     padding: 0 25px;
     float: left;
@@ -19,19 +19,17 @@
     letter-spacing: 0.1em;
     line-height: 50px;
 }
-.current-number{
+
+.current-number {
     background-color: black;
 }
-.page:hover{
+
+.page:hover {
     background-color: rgb(102, 102, 102);
     color: #fff;
 }
 
-
-
-
-.next, .back{
-    /*background-color: transparent;*/
+.next, .back {
     color: black;
     height: 100%;
 }

@@ -8,8 +8,7 @@ const Film = ({movie}) => {
 
   return (
     <div className='movie-details'>
-
-      <div className='view-film'>
+      <div>
         <img
           className='movie-image'
           alt=''

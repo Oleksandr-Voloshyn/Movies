@@ -1,5 +1,5 @@
 import React from 'react';
-import './saveMovies.css'
+import './save-movies.css'
 import clouse from '../../image/clouse.png'
 
 
