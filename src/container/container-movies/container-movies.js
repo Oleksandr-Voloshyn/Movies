@@ -2,9 +2,11 @@ import React, {Component} from 'react';
 import {connect} from "react-redux";
 import { withRouter } from 'react-router';
 
-import './container-popular-movies.css'
+import './container-movies.css'
 import SearcMovies from './found-movies/found-movies';
 import PopularMovies from './popular-movies/popular-movies';
+import MoviesByGenres from './movies-by-genres/movies-by-genres'
+import SidebarGenres from "../../sidebar/sidebar-genres/sidebar-genres";
 
 import {
   getGenresMovies,getPopularMovies, getSearchMovies,
@@ -13,6 +15,8 @@ import {
   clearMovie, getMovieIdThunk, 
   getRecommendationsMoviesThunk} from "../../redux/movie-id-reducer";
 import {getMovieLocalStorage, setSaveMovies} from "../../redux/save-movies-reducer"
+
+import {getMovieByGenre} from '../../redux/movies-by-genres-reducer'
 
 
 
@@ -31,7 +35,6 @@ state = {
     this.props.clearMovie()
     this.props.history.push('/')
     this.props.clearSearchMovies();
-   
   }
 
   componentDidUpdate(prevProps){
@@ -57,48 +60,44 @@ state = {
     this.props.getSearchMovies(this.props.value, page) 
     this.props.history.push(`/search`)
   };
-
-  openFilm = (id) => {
-    this.props.getMovieIdThunk(id);
-    this.props.getRecommendationsMoviesThunk(id);
-    this.props.history.push(`/movie/${id}`)
-  };
-
-
+  onPageMivieByGenres = (page) => {
+    this.setState({current: page})
+    this.props.getMovieByGenre(this.props.genresId, page)
+  }
 
 
   render() {
-    const {movies, moviesSearch} = this.props
-
+    const {movies, moviesSearch, movieByGenres} = this.props
+    
     return (
+      <div className='sidebar-content'>
+         <div>
+          <SidebarGenres/>
+        </div>
       <div className='popular-movies'>
-        <div>
-        { (moviesSearch.length === 0) ?
+      
+        { (this.props.history.location.pathname === '/') ?
         (
           <PopularMovies
-          openFilm={this.openFilm}
-          setSaveMovies={this.props.setSaveMovies}
-          saveMovies={this.props.saveMovies}
           movies={movies}
           onPageChange={this.onPageChange}
           currentPage={this.state.current}
-          allGenres={this.props.allGenres}
-          clearMovies={this.props.clearMovies}
+          getPopularMovies={this.props.getPopularMovies}
           />)
-          : (<SearcMovies
+          : (this.props.history.location.pathname === '/search') ?
+          (<SearcMovies
           movies={moviesSearch}
-          openFilm={this.openFilm}
-          setSaveMovies={this.props.setSaveMovies}
-          saveMovies={this.props.saveMovies}
           currentPage={this.state.current}
           onPageChange={this.onPageSearchMovies}
-          allGenres={this.props.allGenres}
           clearSearchMovies={this.props.clearSearchMovies}
-          getMovieLocalStorage={this.props.getMovieLocalStorage}
           />
-        )
+        ) : ( <MoviesByGenres
+          movies={movieByGenres}
+          currentPage={this.state.current}
+          onPageChange={this.onPageMivieByGenres}
+        />) 
   }
-        </div>
+      </div>
       </div>
     
     );
@@ -112,10 +111,13 @@ let mapStateToProps = (state) => {
     allGenres: state.popularMovies.allGenres,
     saveMovies: state.likeMovies.saveMovies,
     moviesSearch: state.popularMovies.moviesSearch,
-    value:state.popularMovies.value
+    value:state.popularMovies.value,
+    movieByGenres: state.moviesByGenres.movieByGenres,
+    genresId: state.moviesByGenres.genresId
   }
 }
+
 export default connect(mapStateToProps, {
   getPopularMovies, getGenresMovies, getSearchMovies, getMovieIdThunk, getRecommendationsMoviesThunk,
-  clearMovie, setSaveMovies, getMovieLocalStorage, clearSearchMovies   
+  clearMovie, setSaveMovies, getMovieLocalStorage, clearSearchMovies, getMovieByGenre   
 })(withRouter (PopularMoviesContainer));

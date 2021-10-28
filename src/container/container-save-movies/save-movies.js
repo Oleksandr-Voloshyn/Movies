@@ -8,7 +8,7 @@ const SaveMovies = ({saveMovies, openFilm, removeSaveMovie}) => {
     <div className='save-page'>
       {
         saveMovies.map(i => {
-          return <div className="movie-card">
+          return <div key={i.id} className="movie-card">
             <div className="info-section">
               <div className='image-block'>
                 <img

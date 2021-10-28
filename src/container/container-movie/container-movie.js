@@ -5,11 +5,10 @@ import { withRouter } from 'react-router';
 import Film from "./movie/film";
 import Recommendations from "./recommendations/recommendations";
 
-import './container-film.css';
+import './container-movie.css';
 
-import {getMovieIdThunk, getRecommendationsMoviesThunk} from "../../redux/movie-id-reducer";
+import {getMovieIdThunk, getRecommendationsMoviesThunk, clearMovie} from "../../redux/movie-id-reducer";
 import {getMovieLocalStorage} from "../../redux/save-movies-reducer";
-
 
 
 class ContainerFilm extends Component {
@@ -22,6 +21,9 @@ class ContainerFilm extends Component {
     this.props.getMovieIdThunk(id);
     this.props.getRecommendationsMoviesThunk(id);
     this.props.history.push(`/movie/${id}`)
+  }
+  componentWillUnmount = () => {
+    this.props.clearMovie();
   }
 
   render() {
@@ -49,6 +51,6 @@ let mapDispatchToProps = (state) => {
 }
 
 export default connect(mapDispatchToProps, {
-  getMovieIdThunk,
+  getMovieIdThunk, clearMovie,
   getRecommendationsMoviesThunk, getMovieLocalStorage}) 
   (withRouter(ContainerFilm));

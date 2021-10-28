@@ -24,3 +24,7 @@ export const popularMovies = (page) => {
   export const recommendationsMovies = (id) => {
     return axios.get(`${URL}movie/${id}/recommendations${KEY}${LANGUAGE}&page=1`)
   }
+
+  export const moviesByGenre = (genre, page) => {
+    return axios.get(`${URL}discover/movie${KEY}${LANGUAGE}&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${genre}&with_watch_monetization_types=flatrate`)
+  }

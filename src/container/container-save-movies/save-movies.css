@@ -20,7 +20,6 @@
 
 }
 
-/*чорний фон*/
 .info-section{
     background: linear-gradient(to right, #0d0d0c 50%, transparent 100%);
     position: relative;
@@ -31,7 +30,6 @@
     border-radius: 10px;
 }
 
-/*Бокове зображення*/
 .blur-back{
     width: 70%;
     background-position: 80% 80% !important;
@@ -59,7 +57,7 @@
     width: 7%;
 }
 .image{
-  width: 50%;
+    width: 50%;
     cursor: pointer;
 }
 

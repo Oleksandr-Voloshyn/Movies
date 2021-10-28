@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import { withRouter } from 'react-router'
 
-import '../container-popular-movies.css'
+import '../container-movies.css'
 
 import CardMovie from '../card-movie/card-movie'
 import Pagination from '../../../dodatok/pagination/pagination'
@@ -20,15 +20,9 @@ useEffect(() => {
         <>
             <div>
                 <CardMovie
-                    setSaveMovies={props.setSaveMovies}
                     movies={props.movies}
-                    openFilm={props.openFilm}
-                    allGenres={props.allGenres}
-                    saveMovies={props.saveMovies}
-                    
                 />
             </div>
-
             <div>
                 <Pagination 
                     onPageChange={props.onPageChange}

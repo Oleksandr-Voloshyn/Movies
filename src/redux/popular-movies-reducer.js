@@ -1,4 +1,4 @@
-import {genresMovies, popularMovies, searchMovies} from "../api/api";
+import {genresMovies, popularMovies, searchMovies, moviesByGenre} from "../api/api";
 
 const SET_POPULAR_MOVIES = 'SET_POPULAR_MOVIES';
 const SET_GENRES_MOVIES = 'SET_GENRES_MOVIES';
@@ -80,8 +80,8 @@ export const getPopularMovies = (page) => {
 export const getGenresMovies = () => {
   return async  (dispatch) => {
     let response = await genresMovies()
+  
   dispatch(setGengerMovies(response.data.genres))
-
   }
 }
 

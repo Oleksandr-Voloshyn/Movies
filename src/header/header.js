@@ -11,8 +11,10 @@ class Header extends Component {
     return (
       <nav className='header'>
         <div className='menu-button'>
-          <Link to='/' className="button"> Popular Movies </Link>
-          <Link to='/saveMovies' > Save Movies</Link>
+          <div className='buttons-margin'>
+          <Link to='/' className="button-header"> Popular Movies </Link>
+          <Link to='/saveMovies' className="button-header"> Save Movies</Link>
+          </div>
         </div>
           <Search/>
       </nav>

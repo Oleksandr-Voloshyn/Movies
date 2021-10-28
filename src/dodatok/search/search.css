@@ -3,22 +3,21 @@
   justify-content: flex-end;
   position: relative;
   margin-right: 11%;
+  height: 75%;
+  margin-top: 5px;
 }
 
 .input{
   font-size: 25px;
   border-radius: 10px 0 0 10px;
-
-
 }
+
 .button-search{
   position: absolute;
   right: 0;
   width: 70px;
   height: 100%;
-  background-color: rgb(240, 236, 236);
-
-
-
+  color: white;
+  background-color: black;
 }
 

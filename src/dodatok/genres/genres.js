@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import './genres.css';
 
 
@@ -23,7 +24,6 @@ const Genres = (props) => {
       {arr.map(i => {
         return (
           <span className='genre'
-                key={i.id}
           >
             {i}
           </span>
@@ -34,4 +34,10 @@ const Genres = (props) => {
   )
 }
 
-export default Genres;
+let mapStateToProps = (state) => {
+  return {
+    allGenres: state.popularMovies.allGenres,
+  }
+}
+
+export default connect(mapStateToProps, null)(Genres);

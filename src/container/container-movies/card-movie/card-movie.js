@@ -2,13 +2,21 @@ import React from 'react';
 import './card-movie.css'
 import Genres from "../../../dodatok/genres/genres";
 import SaveButton from "../../../dodatok/button-save/save-button";
+import { connect } from 'react-redux';
+import {getMovieIdThunk, getRecommendationsMoviesThunk} from '../../../redux/movie-id-reducer'
+import { withRouter } from 'react-router';
 
-const CardMovie = ({movies, openFilm, allGenres}) => {
-
+const CardMovie = ({movies, allGenres, ...props}) => {
+  
+const openFilm = (id) => {
+    props.getMovieIdThunk(id);
+    props.getRecommendationsMoviesThunk(id);
+    props.history.push(`/movie/${id}`)
+  };
   return (
     <div>
       <div className='all-film'>
-        {movies.map(s => {
+        {movies.length > 0 && movies.map(s => {
           return <div className='card-film' key={s.id}>
 
             {s.backdrop_path == null
@@ -44,6 +52,6 @@ const CardMovie = ({movies, openFilm, allGenres}) => {
 }
 
 
-export default (CardMovie);
+export default connect(null,{getMovieIdThunk, getRecommendationsMoviesThunk})(withRouter(CardMovie));
 
 

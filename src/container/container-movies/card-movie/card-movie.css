@@ -5,11 +5,11 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    max-width: 1200px;
-    min-width: 100px;   
+    /* max-width: 1200px;
+    min-width: 100px;    */
 }
 .card-film{
-    width: 200px;
+    width: 220px;
     margin: 10px;
 }
 
@@ -36,7 +36,7 @@
 }
 .all-genres{
     padding-left: 4px;
-    padding-bottom: 4px;
+    padding-bottom: 8px;
 }
 
 .button-save{ 
@@ -49,8 +49,8 @@
 
 .title{
     text-align: center;
-    font-size: 17px;
-    
+    font-size: 20px;
+    padding-top: 4px;
     font-weight: bolder;
     /* height: 50px; */
     width: 88%;

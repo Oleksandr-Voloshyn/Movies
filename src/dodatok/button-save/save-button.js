@@ -49,7 +49,7 @@ const [like, setLike] = useState(false);
     if (!like) {
       return (
         <img
-          className='save'
+          className='save-image'
           src={remov}
           alt=''
           onClick={() => addToLike()}/>
@@ -57,7 +57,7 @@ const [like, setLike] = useState(false);
     } else {
       return (
         <img
-          className='save'
+          className='save-image'
           alt=''
           src={save}
           onClick={() => removeLikeMovie()}/>
