@@ -5,8 +5,7 @@ import Pagination from '../../../dodatok/pagination/pagination'
 import { withRouter } from 'react-router'
 
 const PopularMovies = (props) => {
-
-
+    
     return (
          <div className="popular">    
         {props.movies && 

@@ -37,15 +37,6 @@ state = {
     this.props.clearSearchMovies();
   }
 
-  componentDidUpdate(prevProps){
-    if (this.props.movies.length === 0) {
-      this.props.getPopularMovies(this.state.current);
-    }
-    if(this.props.match.path === '/' && this.state.current !== prevProps.current){
-      this.props.getPopularMovies(this.state.current);   
-    }
-  };
-
   componentWillUnmount(){
     this.setState({current: 1})
   };
@@ -82,7 +73,7 @@ state = {
           movies={movies}
           onPageChange={this.onPageChange}
           currentPage={this.state.current}
-          getPopularMovies={this.props.getPopularMovies}
+          getPopularMovies={this.props.getPopularMovies}   
           />)
           : (this.props.history.location.pathname === '/search') ?
           (<SearcMovies
