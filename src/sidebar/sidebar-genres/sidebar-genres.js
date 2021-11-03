@@ -42,7 +42,7 @@ const SidebarGenres = ({allGenres, getMovieByGenre, setGenreId, ...props}) => {
     }
 
         return (
-            <div className='sss'>
+            <div className='fon-genres'>
             <div className='menu'>
                 <h2 className="title-genres">Genres</h2>
                 {allGenres.map(genre => {
