@@ -1,8 +1,11 @@
-.menu{
+.fon-genres{
     background: -webkit-linear-gradient(rgb(41, 41, 41), rgb(95, 92, 92));
-    width: 220px;
+    width: 250px;
     height: 310px; 
     margin-left: 30px;
+}
+
+.menu{
     word-wrap: break-word;
     opacity: 0.9;
     padding-left: 10px;
@@ -14,11 +17,9 @@
     display: inline-block;
     margin: 3px;
     padding: 1px 3px 1px 3px;
-    
     white-space:nowrap;
     color: white;
-    background-color: black;
-    
+    background-color: black;   
 }
 
 .no-elect {
@@ -35,19 +36,13 @@
     background-color: white;
 }
 
-.button-serch-by-genres-top{
-    margin-top: -75px;
-    position: relative;
-    }
 .button-search-by-genres{
     margin: auto;
     width: 140px;
     height: 30px;
-   
 }
 
 .button-ads{
-  
     margin-top: 20px;
     width: 100%;
     height: 100%;

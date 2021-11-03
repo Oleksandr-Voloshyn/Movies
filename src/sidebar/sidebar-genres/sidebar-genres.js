@@ -42,7 +42,7 @@ const SidebarGenres = ({allGenres, getMovieByGenre, setGenreId, ...props}) => {
     }
 
         return (
-            <div>
+            <div className='sss'>
             <div className='menu'>
                 <h2 className="title-genres">Genres</h2>
                 {allGenres.map(genre => {
@@ -51,13 +51,13 @@ const SidebarGenres = ({allGenres, getMovieByGenre, setGenreId, ...props}) => {
 
                 )})}
             </div>
-            <div className='button-serch-by-genres-top'>
+           
                 <div className='button-search-by-genres'>
                     <button
                     className='button-ads' 
                     onClick={() => movieGenre(genresId)}> Search</button>
                 </div>
-            </div>
+    
         </div>
         )
     }
