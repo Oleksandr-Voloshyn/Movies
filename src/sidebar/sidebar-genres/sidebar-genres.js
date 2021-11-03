@@ -31,6 +31,7 @@ const ViewGenre = ({genre, genresId}) => {
     )
 }
 
+
 const SidebarGenres = ({allGenres, getMovieByGenre, setGenreId, ...props}) => {
 
     let genresId = [];
@@ -42,7 +43,6 @@ const SidebarGenres = ({allGenres, getMovieByGenre, setGenreId, ...props}) => {
     }
 
         return (
-            <div>
             <div className='fon-genres'>
             <div className='menu'>
                 <h2 className="title-genres">Genres</h2>
@@ -52,7 +52,7 @@ const SidebarGenres = ({allGenres, getMovieByGenre, setGenreId, ...props}) => {
 
                 )})}
             </div>
-            </div>
+            
                 <div className='button-search-by-genres'>
                     <button
                     className='button-ads' 
