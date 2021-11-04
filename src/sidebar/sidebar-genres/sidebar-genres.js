@@ -53,12 +53,9 @@ const SidebarGenres = ({allGenres, getMovieByGenre, setGenreId, ...props}) => {
                 )})}
             </div>
             
-                <div className='button-search-by-genres'>
-                    <button
-                    className='button-ads' 
+                <button
+                    className='button-search-genres' 
                     onClick={() => movieGenre(genresId)}> Search</button>
-                </div>
-                <button>hgkjgkj</button>
                 
         </div>
         )
